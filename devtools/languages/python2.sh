@@ -1,1 +1,1 @@
-apt-get install -y python2 python2-dev
+apt-get install -y python python-dev
