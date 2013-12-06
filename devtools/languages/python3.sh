@@ -1,1 +1,1 @@
-apt-get install python3 python3-dev
+apt-get install -y python3 python3-dev
