@@ -1,1 +1,1 @@
-sudo apt-get install -y openssl
+apt-get install -y openssl
