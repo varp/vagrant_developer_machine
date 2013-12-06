@@ -3,3 +3,15 @@ echo "Warning! It will install latest version of [pip] and [setuptools]\nNot dis
 download_ez_setup()
 {
 }
+
+install_ez_setup()
+{
+}
+
+download_get_pip()
+{
+}
+
+install_pip()
+{
+}
