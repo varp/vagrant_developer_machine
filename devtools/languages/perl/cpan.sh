@@ -1,3 +1,5 @@
+#!/bin/bash
+
 warn()
 {
 	echo "Installing span modules...\n"
