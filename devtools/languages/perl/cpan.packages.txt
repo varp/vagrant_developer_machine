@@ -1,1 +1,12 @@
 Dancer
+DBD::Pg
+YAML
+JSON
+Dancer::Session::Redis 
+Dancer::Plugin::Database
+Dancer::Plugin::Database::Core
+Mail::Sendmail
+GD
+Crypt::CBC
+Module::Refresh
+Clone
