@@ -9,7 +9,7 @@ add_webupd_ppa()
 install_oracle_installer()
 {
   # TODO accept Oracle Java license ## dpkg-config
-  apt-get install oracle-java7-installer 
+  apt-get install -y oracle-java7-installer 
 }
 
 add_webupd_ppa
