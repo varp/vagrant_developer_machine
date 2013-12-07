@@ -1,1 +1,1 @@
-apt-get install ruby rake irb
+apt-get install -y ruby rake irb
