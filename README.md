@@ -1,7 +1,7 @@
 Vagrant Developer Machine
 =========================
 
-Almost always, Vagrant using to build test environment fot your projects. Here is and it is anthoer point of view of using Vagrant ecosystem.
+Almost always, Vagrant using to build test environment for your projects. Here is and it is anthoer point of view of using Vagrant ecosystem.
 
 We use Vagrant to build custom developing environment using components, like a *devtools/python*, *gui*, *java* etc.
 
