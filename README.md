@@ -3,9 +3,9 @@ Vagrant Developer Machine
 
 Almost always, Vagrant using to build test environment fot testing of your projects. Here is and it is anthoer point of view of using Vagrant ecosystem.
 
-We use Vagrant to build custom developing environment using components, like a 'devtools/python', 'gui', 'java' etc.
+We use Vagrant to build custom developing environment using components, like a *devtools/python*, *gui*, *java* etc.
 
-Components of the future developer machine (ecosystem) separated in namespaces. Namespaces is simply folders. Components in turn, consists of modules. Example: 'gui' components consists of 'xfce.sh' and 'gnome3.sh' modules.
+Components of the future developer machine (ecosystem) separated in namespaces. Namespaces is simply folders. Components in turn, consists of modules. Example: *gui* components consists of *xfce.sh* and *gnome3.sh* modules.
 
 Modules are using Vagrant provisioning mechanisms, exactly `shell` provisioning. So, it is simply `shell` (`bash`) scripts, that will executed on `vagrant up`, `vagrant reload` and `vagrant provision` commands.
 
