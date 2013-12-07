@@ -1,3 +1,3 @@
 #!/bin/bash
 
-apt-get install git git-doc git-man
+apt-get install -y git git-doc git-man
