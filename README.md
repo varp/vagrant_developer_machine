@@ -12,9 +12,9 @@ Modules are using Vagrant provisioning mechanisms, exactly `shell` provisioning.
 You can mix components and modules to build your own developer machine that fits your needs and tastes. So, choose your destiny =)
 
 Installation
-============
+------------
 TODO
 
 Building
-========
+--------
 TODO
