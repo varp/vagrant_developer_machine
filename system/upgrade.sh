@@ -3,7 +3,7 @@
 upgrade_system()
 {
   echo -n "INFO: upgrading system..."
-  apt-get update && apt-get upgrade -y && echo "\tDone."  
+  apt-get update && apt-get upgrade -y 
 }
 
 upgrade_system
