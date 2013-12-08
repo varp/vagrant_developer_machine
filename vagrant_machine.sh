@@ -10,6 +10,8 @@ echo -n "2..."
 echo -n "3..."
 echo "Building your developer machine ==>"
 
+## upgrade goes first of all
+./system/upgrade.sh
 
 ## deps goes first
 ./deps/openssl.sh
@@ -18,7 +20,6 @@ echo "Building your developer machine ==>"
 ./deps/apt-add-repository.sh
 
 ## components goes after deps
-./system/upgrade.sh
 ./devtools/vim.sh
 ./devtools/git.sh
 ./devtools/perl.sh
