@@ -74,7 +74,7 @@ update_configs()
         update_apt_config
       ;;
       locales)
-        updaet_locales_config
+        update_locales_config
       ;;
       nginx)
         update_nginx_config
