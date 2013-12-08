@@ -2,7 +2,7 @@
 
 install_packages()
 {
-  for pack in $(cat cpan.packages.txt); do
+  for pack in $(cat ./devtools/language/perl/cpan.packages.txt); do
     cpan $pack;
   done	
 }
