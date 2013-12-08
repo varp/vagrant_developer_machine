@@ -2,7 +2,7 @@
 
 restart_service()
 {
-  [[ -z $1 ]] && exit -1
+  [[ -z $1 ]] && echo "ERR: You must supply service name to restart." && exit -1
   service $1 restart
 }
 
@@ -25,7 +25,7 @@ update_apt_config()
 
 gen_locales()
 {
-  locale-gen $(cat ./locale-gen.txt | xargs)
+  locale-gen $(cat ./locales/locale-gen.txt | xargs)
 }
 
 update_locales_config()
