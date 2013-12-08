@@ -4,7 +4,12 @@ SCRIPTS_ROOT='/vagrant/vagrant_provision'
 
 cd $SCRIPTS_ROOT
 
-# ./system/upgrade.sh
+
+echo -n "1..."
+echo -n "2..."
+echo "3..."
+
+./system/upgrade.sh
 ./devtools/vim.sh
 ./devtools/git.sh
 ./configs/configs.sh locales
