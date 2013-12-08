@@ -31,7 +31,7 @@ gen_locales()
 update_locales_config()
 {
   gen_locales
-  orig_locale_conf=/etc/defualt/locale
+  orig_locale_conf=/etc/default/locale
   unlink $orig_locale_conf
   cp -vf ./configs/locales/locale $orig_locale_conf
 }
