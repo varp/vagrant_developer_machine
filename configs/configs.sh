@@ -60,7 +60,7 @@ update_sysctl_config()
   sysctl_conf_name='sysctl.conf'
   unlink /etc/$sysctl_conf_name
   cp -vf ./sysctl/$sysctl_conf_name /etc/$sysctl_conf_name
-  echo "WARN: You must reboot system to apply $sysctl_conf_name";
+  echo "WARN: You must reboot system to apply [$sysctl_conf_name]";
 }
 
 update_configs()
