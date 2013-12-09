@@ -2,6 +2,7 @@ require 'bundler'
 require 'rake'
 require 'erb'
     
+BUILD_DIR = "./build"
 VAGRANT_MACHINE_PROVISION = "vagrant_machine.sh"
 VAGRANTFILE = "Vagrantfile"
 
@@ -32,11 +33,20 @@ task :build do
     f.read
   end 
 
-  File.open(VAGRANT_MACHINE_PROVISION, "w") do |f|
+  Dir.mkdir_p(BUILD_DIR) unless Dir.exists? BUILD_DIR
+
+
+  File.open(File.join(BUILD_DIR, VAGRANT_MACHINE_PROVISION), "w") do |f|
       f.puts ERB.new(provision_template, 0, "", "provision_out").result
   end
 
-  File.open(VAGRANTFILE, "w") do |f|
+  File.open(File.join(BUILD_DIR, VAGRANTFILE), "w") do |f|
     f.puts ERB.new(vagratfile_template, 0, "", "vagratfile_out").result
   end
+end
+
+task :default do
+  Rake::Task[:clean].invoke
+  Rake::Task[:install].invoke
+  Rake::Task[:build].invoke
 end
