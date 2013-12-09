@@ -1,4 +1,4 @@
-require 'fileutils'
+require 'bundle'
 
 
 task :install do
