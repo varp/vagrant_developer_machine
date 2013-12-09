@@ -10,6 +10,7 @@ echo "TERM => $TERM"
 echo "PATH => $PATH"
 echo "TTY =>  `tty`"
 echo "STDIN => `ls -la /dev/stdin`"
+echo "PROC => `ls -la /proc/self/fd/0`"
 [ ! -f /dev/tty ] && echo "tty device found!"
 
 cd $SCRIPTS_ROOT
