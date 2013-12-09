@@ -22,9 +22,9 @@ echo "Building your developer machine ==>"
 # ## components goes after deps
 ./devtools/vim.sh
 ./devtools/git.sh
-./devtools/perl.sh
-./devtools/python2.sh
-./devtools/python3.sh
+./devtools/languages/perl.sh
+./devtools/languages/python2.sh
+./devtools/languages/python3.sh
 ./configs/configs.sh locales
 
 # restore old CWD
