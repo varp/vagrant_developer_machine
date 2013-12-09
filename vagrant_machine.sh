@@ -1,8 +1,9 @@
 #!/bin/bash
 
 SCRIPTS_ROOT='/home/vagrant/logout/vagrant_provision'
-cd $SCRIPTS_ROOT
 export DEBIAN_FRONTEND=readline
+export TERM=linux
+cd $SCRIPTS_ROOT
 
 
 echo "======================= Vagrant Dev Machine ========================"
