@@ -9,6 +9,7 @@ cd $SCRIPTS_ROOT
 echo "1...2...3..."
 echo "Building your developer machine ==>"
 
+./system/repo_yandex.sh
 ## upgrade goes first of all
 ./system/upgrade.sh
 
@@ -19,11 +20,24 @@ echo "Building your developer machine ==>"
 ./deps/apt-add-repository.sh
 
 # ## components goes after deps
+
+./gui/xfce.sh
+
+./java/oracle.sh
+
+./db/mysql/mysql.sh
+./db/postgresql/postgresql.sh
+./db/redis/redis.sh
+
+./devtools/pgadmin.sh
 ./devtools/vim.sh
+./devtools/sublime3.sh
 ./devtools/git.sh
 ./devtools/languages/perl.sh
 ./devtools/languages/python2.sh
 ./devtools/languages/python3.sh
+
+
 ./configs/configs.sh locales
 
 # restore old CWD
