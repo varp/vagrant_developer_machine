@@ -8,6 +8,7 @@ task :install do
     cp -vf ./Vagrantfile ..
   EOF
 
+  ENV['DEVELOPER_MACHINE_ROOT'] = Dir.pwd
   system script
 
   # TODO: change CWD of parent process (bash|shell) to vagrant_devel_machine directory
