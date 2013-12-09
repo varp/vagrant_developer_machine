@@ -22,6 +22,7 @@ echo "Building your developer machine ==>"
 # ## components goes after deps
 
 ./gui/xfce.sh
+./system/ubuntu_fonts.sh
 
 ./java/oracle.sh
 

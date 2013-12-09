@@ -1,3 +1,3 @@
 #!/bin/bash
 
-apt-get install -y xfce4 xfce4-goodies
+apt-get install -y xubuntu-desktop
