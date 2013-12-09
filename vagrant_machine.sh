@@ -1,9 +1,11 @@
 #!/bin/bash
 
+mount -t vboxsf -o uid=`id -u vagrant`,gid=`getent group vagrant | cut -d: -f3` /vagrant /vagrant
+
+
 SCRIPTS_ROOT='/vagrant/vagrant_provision'
 export DEBIAN_FRONTEND=readline
-# export PATH=$PATH:/sbin:/usr/sbin:/usr/local/sbin
-# export TERM=linux
+
 
 echo "======================= Vagrant Dev Machine ========================"
 echo "TERM => $TERM"
@@ -13,8 +15,8 @@ echo "STDIN => `ls -la /dev/stdin`"
 echo "PROC => `ls -la /proc/self/fd/0`"
 [ ! -f /dev/tty ] && echo "tty device found!"
 
-cd $SCRIPTS_ROOT
 
+cd $SCRIPTS_ROOT
 
 echo "1...2...3..."
 echo "Building your developer machine ==>"
