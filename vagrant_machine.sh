@@ -1,14 +1,12 @@
 #!/bin/bash
 
 SCRIPTS_ROOT='/vagrant/vagrant_provision'
-export DEBIAN_FRONTEND=noninteractive
+export DEBIAN_FRONTEND=readline
 
 cd $SCRIPTS_ROOT
 
 
-echo "1..."
-echo "2..."
-echo "3..."
+echo "1...2...3..."
 echo "Building your developer machine ==>"
 
 ## upgrade goes first of all
