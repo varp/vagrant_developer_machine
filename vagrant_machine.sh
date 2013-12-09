@@ -19,6 +19,9 @@ echo "Building your developer machine ==>"
 ./deps/wget.sh
 ./deps/apt-add-repository.sh
 
+## adding developer user
+./system/user.sh
+
 # ## components goes after deps
 
 ./gui/xfce.sh
