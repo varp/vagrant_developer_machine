@@ -11,7 +11,7 @@ task :install do
   system script
 
   # TODO: change CWD of parent process (bash|shell) to vagrant_devel_machine directory
-  %[eval $(ruby -e'puts "cd $OLDPWD"')]
+  %[eval $(ruby -e'puts "cd #{ENV['OLDPWD']}"')]
 end
 
 task :build do
