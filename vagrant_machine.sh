@@ -5,7 +5,7 @@ export DEBIAN_FRONTEND=readline
 export PATH=$PATH:/sbin:/usr/sbin:/usr/local/sbin
 export TERM=linux
 
-echo "========================"
+echo "======================= Vagrant Dev Machine ========================"
 echo "TERM => $TERM"
 echo "PATH => $PATH"
 [ ! -f /dev/tty ] && echo "tty device found!"
