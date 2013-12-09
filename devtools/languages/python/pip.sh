@@ -17,7 +17,7 @@ download_get_pip()
 
 install_pip()
 {
-    python /tmp/get-pip.py
+    cd /tmp && python /tmp/get-pip.py && cd $OLDPWD
 }
 
 

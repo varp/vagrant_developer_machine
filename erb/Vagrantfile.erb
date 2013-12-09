@@ -19,6 +19,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # config.vm.synced_folder ".", "/vagrant"
   config.vm.provider :virtualbox do |vb|
     vb.gui = true
+    vb.customize ["modifyvm", :id, "--name", "developer-pc"]
+    vb.customize ["modifyvm", :id, "--ioapic", "on"]
+    vb.customize ["modifyvm", :id, "--acpi", "on"]
     vb.customize ["modifyvm", :id, "--memory", "1024"]
+    vb.customize ['modifyvm', :id, "--cpus", "4"]
+    vb.customize ['modifyvm', :id, "--vram", "64"]
+    vb.customize ['modifyvm', :id, "--accelerate3d", "on"]
+    vb.customize ['modifyvm', :id, "--cpuexecutioncap", "50"]
   end
 end
