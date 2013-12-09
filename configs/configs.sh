@@ -26,14 +26,15 @@ update_apt_config()
 gen_locales()
 {
   locale-gen $(cat ./configs/locales/locale-gen.txt | xargs)
+  dpkg-reconfigure locales
 }
 
 update_locales_config()
 {
-  gen_locales
   orig_locale_conf=/etc/default/locale
   unlink $orig_locale_conf
   cp -vf ./configs/locales/locale $orig_locale_conf
+  gen_locales
 }
 
 update_nginx_config()
