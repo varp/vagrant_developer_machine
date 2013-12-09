@@ -36,7 +36,7 @@ task :build do
       f.puts ERB.new(provision_template, 0, "", "provision_out").result
   end
 
-  File.open(VAGRANTFILE, "w") do |io|
+  File.open(VAGRANTFILE, "w") do |f|
     f.puts ERB.new(vagratfile_template, 0, "", "vagratfile_out").result
   end
 end
