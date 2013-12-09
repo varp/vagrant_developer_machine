@@ -14,17 +14,17 @@ echo "Building your developer machine ==>"
 # ./system/upgrade.sh
 
 ## deps goes first
-# ./deps/openssl.sh
-# ./deps/curl.sh
-# ./deps/wget.sh
-# ./deps/apt-add-repository.sh
+./deps/openssl.sh
+./deps/curl.sh
+./deps/wget.sh
+./deps/apt-add-repository.sh
 
 # ## components goes after deps
-# ./devtools/vim.sh
-# ./devtools/git.sh
-# ./devtools/perl.sh
-# ./devtools/python2.sh
-# ./devtools/python3.sh
+./devtools/vim.sh
+./devtools/git.sh
+./devtools/perl.sh
+./devtools/python2.sh
+./devtools/python3.sh
 ./configs/configs.sh locales
 
 # restore old CWD
