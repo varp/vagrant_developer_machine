@@ -1,7 +1,10 @@
+require 'fileutils'
+
+
 task :install do
-  `cd .. && vagrant destroy`
-  `cd ./vagrant_provision && git reset --hard && git pull && cd $OLDPWD`
-  `cp -vf ./vagrant_provision/Vagrantfile .` 
+  system "#{FileUtils.cd(Dir.new('..'))} && vagrant destroy"
+  system "#{FileUtils.cd(Dir.new('vagrant_provision'))} && git reset --hard && git pull && cd $OLDPWD"
+  system "cp -vf ./vagrant_provision/Vagrantfile ."
 end
 
 task :build do
