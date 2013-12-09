@@ -23,9 +23,11 @@ GEM
     net-scp (1.1.2)
       net-ssh (>= 2.6.5)
     net-ssh (2.7.0)
+    rake (10.1.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  rake
   vagrant!
