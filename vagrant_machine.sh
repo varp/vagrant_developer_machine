@@ -2,7 +2,7 @@
 
 SCRIPTS_ROOT='/home/vagrant/logout/vagrant_provision'
 cd $SCRIPTS_ROOT
-# export DEBIAN_FRONTEND=readline
+export DEBIAN_FRONTEND=readline
 
 
 echo "======================= Vagrant Dev Machine ========================"
