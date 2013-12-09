@@ -7,6 +7,7 @@ export TERM=linux
 echo "========================"
 echo "TERM => $TERM"
 echo "PATH => $PATH"
+[! -f /dev/tty ] && "tty device found!"
 
 cd $SCRIPTS_ROOT
 
