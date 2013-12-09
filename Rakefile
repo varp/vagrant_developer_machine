@@ -1,20 +1,42 @@
 require 'bundler'
+require 'rake'
+require 'erb'
+    
+VAGRANT_MACHINE_PROVISION = "vagramt_machine.sh"
+VAGRANTFILE = "Vagrantfile"
 
-ENV['DEVELOPER_MACHINE_ROOT'] = Dir.getwd
-ENV['DEVELOPER_MACHINE_PROVISION_BOOTSTRAP'] = 'vagrant_machine.sh'
+task :clean do
+  script = <<-EOF
+    vagrant destroy
+    unlink ./Vagrantfile
+  EOF
+
+  system script
+end
 
 task :install do
   script = <<-EOF
-    cd .. && vagrant destroy
-    [ -f ./Vagrantfile ] && unlink ./Vagrantfile
     vagrant init precise32 http://files.vagrantup.com/precise32.box
   EOF
 
   system script
-
-  # TODO: change CWD of parent process (bash|shell) to vagrant_devel_machine directory
 end
 
 task :build do
-  puts "Building"
+  
+  provision_template = File.open(VAGRANT_MACHINE_PROVISION + ".erb", "r") do |f|
+    f.read
+  end
+
+  vagratfile_template = File.open(VAGRANTFILE + '.erb', "r") do |f|
+    f.read
+  end 
+
+  File.open(VAGRANT_MACHINE_PROVISION, "w") do |f|
+      f.puts ERB.new(provision_template, 0, "", "provision_out").result
+  end
+
+  File.open(VAGRANTFILE, "w") do |io|
+    f.puts ERB.new(vagratfile_template, 0, "", "vagratfile_out").result
+  end
 end
