@@ -1,4 +1,4 @@
-require 'bundler'
+require 'rubygems'
 require 'rake'
 require 'erb'
     
