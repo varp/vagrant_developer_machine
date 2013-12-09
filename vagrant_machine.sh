@@ -2,6 +2,7 @@
 
 SCRIPTS_ROOT='/vagrant/vagrant_provision'
 export DEBIAN_FRONTEND=readline
+export TERM=linux
 
 cd $SCRIPTS_ROOT
 
