@@ -4,8 +4,8 @@ require 'bundler'
 task :install do
   script = <<-EOF
     cd .. && vagrant destroy
-    cd ./vagrant_provision && git reset --hard && git pull && cd $OLDPWD
-    cp -vf ./vagrant_provision/Vagrantfile .
+    cd ./vagrant_provision && git reset --hard && git pull
+    cp -vf ./Vagrantfile ..
   EOF
 
   system script
