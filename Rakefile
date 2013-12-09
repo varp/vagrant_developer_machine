@@ -1,7 +1,7 @@
 require 'bundler'
 
 ENV['DEVELOPER_MACHINE_ROOT'] = Dir.getwd
-ENV['DEVELOPER_MACHINE_PROVISION_BOOTSTRAP'] = 'vagant_machine.sh'
+ENV['DEVELOPER_MACHINE_PROVISION_BOOTSTRAP'] = 'vagrant_machine.sh'
 
 task :install do
   script = <<-EOF
