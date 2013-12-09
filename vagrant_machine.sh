@@ -1,6 +1,7 @@
 #!/bin/bash
 
-SCRIPTS_ROOT='/vagrant/vagrant_provision'
+SCRIPTS_ROOT='/home/vagrant/logout/vagrant_provision'
+cd $SCRIPTS_ROOT
 # export DEBIAN_FRONTEND=readline
 
 
@@ -13,7 +14,6 @@ echo "PROC => `ls -la /proc/self/fd/0`"
 [ ! -f /dev/tty ] && echo "tty device found!"
 
 
-cd $SCRIPTS_ROOT
 
 echo "1...2...3..."
 echo "Building your developer machine ==>"
