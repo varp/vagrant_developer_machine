@@ -9,6 +9,8 @@ task :install do
   EOF
 
   system script
+
+  # TODO: change CWD of parent process (bash|shell) to vagrant_devel_machine directory
 end
 
 task :build do
