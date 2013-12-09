@@ -2,8 +2,8 @@
 
 SCRIPTS_ROOT='/vagrant/vagrant_provision'
 export DEBIAN_FRONTEND=readline
-export PATH=$PATH:/sbin:/usr/sbin:/usr/local/sbin
-export TERM=linux
+# export PATH=$PATH:/sbin:/usr/sbin:/usr/local/sbin
+# export TERM=linux
 
 echo "======================= Vagrant Dev Machine ========================"
 echo "TERM => $TERM"
