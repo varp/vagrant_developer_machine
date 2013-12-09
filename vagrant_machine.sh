@@ -8,6 +8,7 @@ export TERM=linux
 echo "======================= Vagrant Dev Machine ========================"
 echo "TERM => $TERM"
 echo "PATH => $PATH"
+echo "TTY =>  `tty`"
 [ ! -f /dev/tty ] && echo "tty device found!"
 
 cd $SCRIPTS_ROOT
