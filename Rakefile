@@ -2,7 +2,7 @@ require 'bundler'
 require 'rake'
 require 'erb'
     
-VAGRANT_MACHINE_PROVISION = "vagramt_machine.sh"
+VAGRANT_MACHINE_PROVISION = "vagrant_machine.sh"
 VAGRANTFILE = "Vagrantfile"
 
 task :clean do
