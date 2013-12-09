@@ -9,6 +9,8 @@ cd $SCRIPTS_ROOT
 echo "1...2...3..."
 echo "Building your developer machine ==>"
 
+./system/hostname.sh
+./system/user.sh
 ./system/repo_yandex.sh
 ## upgrade goes first of all
 ./system/upgrade.sh
