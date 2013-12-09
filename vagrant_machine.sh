@@ -1,7 +1,7 @@
 #!/bin/bash
 
 SCRIPTS_ROOT='/home/vagrant/logout/vagrant_provision'
-export DEBIAN_FRONTEND=readline
+export DEBIAN_FRONTEND=noninteractive
 export TERM=linux
 cd $SCRIPTS_ROOT
 
