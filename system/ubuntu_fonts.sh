@@ -6,3 +6,5 @@ install_ubuntu_fonts()
 	apt-get update
 	apt-get install -y ubuntu-font-family-sources
 }
+
+install_ubuntu_fonts
