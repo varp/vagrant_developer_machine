@@ -1,4 +1,4 @@
-require 'bundle'
+require 'bundler'
 
 
 task :install do
