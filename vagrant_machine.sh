@@ -11,7 +11,7 @@ echo "3..."
 echo "Building your developer machine ==>"
 
 ## upgrade goes first of all
-./system/upgrade.sh
+# ./system/upgrade.sh
 
 ## deps goes first
 # ./deps/openssl.sh
