@@ -12,4 +12,4 @@ upgrade_vbox_guest_additions()
 }
 
 upgrade_system
-upgrade_vbox_guest_additions
+# upgrade_vbox_guest_additions
