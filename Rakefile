@@ -1,6 +1,6 @@
 task :install do
-  system "#{Dir.chdir(Dir.new('..'))} && vagrant destroy"
-  system "#{Dir.chdir('vagrant_provision')} && git reset --hard && git pull && #{Dir.chdir(Dir.new('..'))}"
+  system "cd .. && vagrant destroy"
+  system "cd vagrant_provision && git reset --hard && git pull && cd $OLDPWD"
   system 'cp -vf vagrant_provision/Vagrantfile .' 
 end
 
