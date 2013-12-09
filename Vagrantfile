@@ -5,8 +5,6 @@ require 'pathname'
 
 # Vagrantfile API/syntax version. Don't touch unless you know what you're doing!
 VAGRANTFILE_API_VERSION = "2"
-DEVELOPER_MACHINE_PROVISION_BOOTSTRAP = 'vagrant_machine.sh'
-
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "precise32"
