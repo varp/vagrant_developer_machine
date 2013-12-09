@@ -38,7 +38,7 @@ echo "Building your developer machine ==>"
 ./gui/xfce.sh
 ./system/ubuntu_fonts.sh
 
-./java/oracle.sh
+./java/openjdk.sh
 
 ./db/mysql/mysql.sh
 ./db/postgresql/postgresql.sh
@@ -50,6 +50,9 @@ echo "Building your developer machine ==>"
 ./devtools/git.sh
 ./devtools/languages/perl.sh
 ./devtools/languages/python2.sh
+./devtools/languages/python/pip.sh
+./devtools/languages/python/venv.sh
+./devtools/languages/python/packages.sh
 ./devtools/languages/python3.sh
 
 
@@ -57,3 +60,6 @@ echo "Building your developer machine ==>"
 
 # restore old CWD
 cd $OLDPWD
+
+## reboot
+reboot

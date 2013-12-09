@@ -1,6 +1,5 @@
-task :install, :shared_folder do |t, args|
-  default_shared_folder = "/vagrant"
-  shared_folder = default_shared_folder unless shared_folder
+task :install do
+  system 'cp -vf vagrant_provision/Vagrantfile .' 
 end
 
 task :build do
