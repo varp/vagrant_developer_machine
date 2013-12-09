@@ -9,6 +9,7 @@ echo "======================= Vagrant Dev Machine ========================"
 echo "TERM => $TERM"
 echo "PATH => $PATH"
 echo "TTY =>  `tty`"
+echo 'STDIN => `ls -la /dev/stdin`'
 [ ! -f /dev/tty ] && echo "tty device found!"
 
 cd $SCRIPTS_ROOT
