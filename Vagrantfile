@@ -5,7 +5,7 @@ require 'pathname'
 
 # Vagrantfile API/syntax version. Don't touch unless you know what you're doing!
 VAGRANTFILE_API_VERSION = "2"
-DEVELOPER_MACHINE_PATH = Dir.new(__FILE__) && Dir.path
+DEVELOPER_MACHINE_PATH = Dir.new(__FILE__).path
 DEVELOPER_MACHINE_SCRIPT_NAME = 'vagrant_machine.sh'
 DEVELOPER_MACHINE_PROVISION_BOOTSTRAP = Pathname.join(DEVELOPER_MACHINE_PATH, DEVELOPER_MACHINE_SCRIPT_NAME)
 
