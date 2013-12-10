@@ -65,7 +65,15 @@ echo "======================= Building your developer machine ================="
 ./configs/configs.sh locales
 
 <% else %>
-  <%= COMPONENTS %>
+  <% COMPONENTS.each do |comp| %>
+    <% if comp.instance_of? Array %>
+      <% comp.each do |path| %>
+        <%= "./#{path}" -%>
+      <% end %>
+    <% else %>
+      <%= "./#{comp}" -%>
+    <% end %>
+  <% end %>
 <% end %>
 
 # restore old CWD

@@ -49,6 +49,8 @@ task :build, [:components] do |t, args|
     COMPONENTS.push interpolate_component(com)
   end
 
+  ## Allways append dependicies
+
   provision_template = File.open("#{ERB_DIR}/#{VAGRANT_MACHINE_PROVISION}.erb", "r") do |f|
     f.read
   end
@@ -65,12 +67,16 @@ task :build, [:components] do |t, args|
   b = binding
   # puts b
 
+  provision_out = ""
+
   File.open(vm_out, "w") do |f|
-      f.puts ERB.new(provision_template, 0, "", "provision_out").result b
+      ERB.new(provision_template, 0, '<>-', "provision_out").result b
+      provision_out.gsub!(/^\s+/, "")
+      f.puts provision_out
   end
 
   File.open(vf_out, "w") do |f|
-    f.puts ERB.new(vagratfile_template, 0, "", "vagrantfile_out").result b
+    f.write ERB.new(vagratfile_template, 0, '', "vagrantfile_out").result b
   end
 
 
@@ -79,7 +85,8 @@ task :build, [:components] do |t, args|
 end
 
 task :default do
+  default_components = 'deps/* system/* java/openjdk gui/xfce devtools/git devtools/sublime3 devtools/vim devtools/languages/* devtools/languages/python/* devtools/languages/ruby/*'
   Rake::Task[:clean].invoke
   Rake::Task[:install].invoke
-  Rake::Task[:build].invoke
+  Rake::Task[:build].invoke(default_components)
 end
