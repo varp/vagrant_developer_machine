@@ -16,7 +16,7 @@ def interpolate_component(component)
       Dir.glob("./configs/**") do |filename|
         configs_args.push(filename.split("/")[-1]) if File.directory?(filename)
       end
-      return "configs/confgis.sh #{configs_args.join(' ')}"
+      return "configs/configs.sh #{configs_args.join(' ')}"
     else
       return "configs/configs.sh #{module_name}"
     end
