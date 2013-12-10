@@ -21,7 +21,12 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     vb.gui = true
     vb.customize ["modifyvm", :id, "--name", "developer-pc"]
     vb.customize ["modifyvm", :id, "--ioapic", "on"]
-    vb.customize ["modifyvm", :id, "--audio", "pulse"]
+    puts ENV['OS']
+    if ENV['OS'].match /.*NT.*/ then
+      vb.customize ["modifyvm", :id, "--audio", "dsound"]
+    else
+      vb.customize ["modifyvm", :id, "--audio", "pulse"]
+    end
     vb.customize ["modifyvm", :id, "--usb", "on"]
     vb.customize ["modifyvm", :id, "--usbehci", "on"]
     vb.customize ["modifyvm", :id, "--clipboard", "bidirectional"]
