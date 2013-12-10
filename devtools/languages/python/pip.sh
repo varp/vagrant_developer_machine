@@ -7,7 +7,7 @@ download_ez_setup()
 
 install_ez_setup()
 {
-     python /tmp/ez_setup.py
+     cd /tmp && python /tmp/ez_setup.py && cd $OLDPWD
 }
 
 download_get_pip()
