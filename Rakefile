@@ -16,9 +16,9 @@ def interpolate_component(component)
       Dir.glob("./configs/**") do |filename|
         configs_args.push(filename) if File.directory?(filename)
       end
-      return "./configs/confgis.sh #{configs_args.join(' ')}"
+      return "configs/confgis.sh #{configs_args.join(' ')}"
     else
-      return "./configs/configs.sh #{module_name}"
+      return "configs/configs.sh #{module_name}"
     end
   end
 
@@ -97,7 +97,7 @@ task :build, [:components] do |t, args|
 end
 
 task :default do
-  default_components = 'deps/* system/* java/openjdk gui/xfce devtools/git devtools/sublime3 devtools/vim devtools/languages/* devtools/languages/python/* devtools/languages/ruby/*'
+  default_components = 'deps/* system/* java/openjdk gui/xfce devtools/git devtools/sublime3 devtools/vim devtools/languages/* devtools/languages/python/* devtools/languages/ruby/* configs/locales'
   Rake::Task[:clean].invoke
   Rake::Task[:install].invoke
   Rake::Task[:build].invoke(default_components)
