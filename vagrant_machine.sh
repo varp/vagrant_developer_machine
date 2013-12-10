@@ -4,12 +4,12 @@ cd $SCRIPTS_ROOT
 export DEBIAN_FRONTEND=noninteractive
 export TERM=linux
 echo "========================== Vagrant Dev Machine =========================="
-echo "PWD => $PWD"
-echo "TERM => $TERM"
-echo "PATH => $PATH"
-echo "TTY =>  `tty`"
-echo "STDIN => `ls -la /dev/stdin`"
-echo "PROC => `ls -la /proc/self/fd/0`"
+echo "PWD =>\t $PWD"
+echo "TERM =>\t $TERM"
+echo "PATH =>\t $PATH"
+echo "TTY =>\t  `tty`"
+echo "STDIN =>\t `ls -la /dev/stdin`"
+echo "PROC =>\t `ls -la /proc/self/fd/0`"
 [ ! -f /dev/tty ] && echo "tty device found!"
 echo "1...2...3..."
 echo "======================= Building your developer machine ================="
@@ -37,7 +37,7 @@ echo "======================= Building your developer machine ================="
 ./devtools/languages/python/venv.sh
 ./devtools/languages/ruby/packages.sh
 ./devtools/languages/ruby/rvm.sh
-./configs/confgis.sh apache apt locales nginx postgresql sysctl
+./configs/configs.sh apache apt locales nginx postgresql sysctl
 # restore old CWD
 cd $OLDPWD
 ## reboot
