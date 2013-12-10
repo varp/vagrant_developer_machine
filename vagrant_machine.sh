@@ -37,7 +37,7 @@ echo "======================= Building your developer machine ================="
 ./devtools/languages/python/venv.sh
 ./devtools/languages/ruby/packages.sh
 ./devtools/languages/ruby/rvm.sh
-././configs/configs.sh locales
+./configs/confgis.sh apache apt locales nginx postgresql sysctl
 # restore old CWD
 cd $OLDPWD
 ## reboot
