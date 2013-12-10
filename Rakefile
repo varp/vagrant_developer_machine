@@ -10,6 +10,18 @@ VAGRANTFILE = "Vagrantfile"
 def interpolate_component(component)
   module_name = component.split("/")[-1]
 
+  if component.split("/").include? "configs"
+    if module_name == "*"
+      configs_args = []
+      Dir.glob("./configs/**") do |filename|
+        configs_args.push(filename) if File.directory?(filename)
+      end
+      return "./configs/confgis.sh #{configs_args.join(' ')}"
+    else
+      return "./configs/configs.sh #{module_name}"
+    end
+  end
+
   if module_name == "*"
     interpolated_files = []
     Dir.glob(File.join(component.split("/")[0...-1], "*.sh")) do |filename|
@@ -44,7 +56,7 @@ end
 task :build, [:components] do |t, args|
   
   COMPONENTS = []
-  components = args.components.split /\s/
+  components = args.components.split /\s+/
   components.each do |com|
     COMPONENTS.push interpolate_component(com)
   end
