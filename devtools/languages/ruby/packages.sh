@@ -2,8 +2,8 @@
 
 install_bundler_gem()
 {
-  cd devtools/languages/ruby && gem install bundler && cd $OLDPWD
+  gem install bundler
 }
 
 install_bundler_gem
-bundle install
+cd devtools/languages/ruby && bundle install && cd $OLDPWD

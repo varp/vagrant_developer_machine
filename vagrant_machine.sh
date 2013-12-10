@@ -2,7 +2,7 @@
 
 SCRIPTS_ROOT="/home/vagrant/logout"
 cd $SCRIPTS_ROOT
-export DEBIAN_FRONTEND=noninteractive
+export DEBIAN_FRONTEND=readline
 export TERM=linux
 
 echo "========================== Vagrant Dev Machine =========================="
@@ -68,3 +68,5 @@ cd $OLDPWD
 
 ## reboot
 # reboot
+
+exit 0
