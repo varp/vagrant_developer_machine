@@ -1,1 +1,3 @@
-ruby.packages.txt
+source "https://rubygems.org"
+
+gem "rails"
