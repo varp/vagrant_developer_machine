@@ -34,6 +34,6 @@ TODO
 * ~/.config/sublime-text-3 change ownership to user not root
 * to find out which packages install with root rights. fix.
 * change permissions and ownership of developer home folder 
-* assign some sort priorites to modules (execution order)
+* assign some kind of priorities to modules (execution order)
 * update ruby to 2.0.0; set as default
 *
