@@ -13,8 +13,24 @@ You can mix components and modules to build your own developer machine that fits
 
 Installation
 ------------
-TODO
+
+Requirements:
+  * git
+  * ruby >= 1.9.3
+  * bundle
+  * vagrant >= 1.4.0
+
+To install run in shell `git clone https://github.com/varp/vagrant_provision.git`. Change directory to *vagrant_provision*. Run `rake && vagrant up`.
 
 Building
 --------
 TODO
+
+TODO
+----
+* ~/.gvfs permissions
+* finish.sh script to reconfigure all needed packages
+* NetworkManager config set managed flag
+* ~/.config/sublime-text-3 change ownership to user not root
+* to find out which packages install with root rights. fix.
+* 
