@@ -70,7 +70,7 @@ task :build, [:components] do |t, args|
   provision_out = ""
 
   File.open(vm_out, "w") do |f|
-      ERB.new(provision_template, 0, '<>-', "provision_out").result b
+      ERB.new(provision_template, 0, '', "provision_out").result b
       provision_out.gsub!(/^\s+/, "")
       f.puts provision_out
   end

@@ -68,10 +68,10 @@ echo "======================= Building your developer machine ================="
   <% COMPONENTS.each do |comp| %>
     <% if comp.instance_of? Array %>
       <% comp.each do |path| %>
-        <%= "./#{path}" -%>
+        <%= "./#{path}" %>
       <% end %>
     <% else %>
-      <%= "./#{comp}" -%>
+      <%= "./#{comp}" %>
     <% end %>
   <% end %>
 <% end %>
