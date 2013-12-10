@@ -49,11 +49,17 @@ echo "======================= Building your developer machine ================="
 ./devtools/sublime3.sh
 ./devtools/git.sh
 ./devtools/languages/perl.sh
+
 ./devtools/languages/python2.sh
 ./devtools/languages/python/pip.sh
 ./devtools/languages/python/venv.sh
 ./devtools/languages/python/packages.sh
+
 ./devtools/languages/python3.sh
+
+./devtools/languages/ruby.sh
+./devtools/languages/ruby/rvm.sh
+./devtools/languages/ruby/packages.sh
 
 ./configs/configs.sh locales
 
