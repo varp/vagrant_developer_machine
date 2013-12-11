@@ -1,3 +1,3 @@
 #!/bin/bash
 
-apt-get install -y wget
+apt-get install -y -q wget

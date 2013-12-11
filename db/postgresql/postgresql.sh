@@ -1,3 +1,3 @@
 #!/bin/bash
 
-apt-get install -y postgresql postgresql-server-dev-all
+apt-get install -y -q postgresql postgresql-server-dev-all

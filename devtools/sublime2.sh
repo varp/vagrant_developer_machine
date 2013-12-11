@@ -2,9 +2,9 @@
 
 install_sublime2()
 {
-	add-apt-repository -y ppa:webupd8team/sublime-text-2
+	add-apt-repository -y -q ppa:webupd8team/sublime-text-2
 	apt-get update
-	apt-get install -y sublime-text
+	apt-get install -y -q sublime-text
 }
 
 install_sublime2

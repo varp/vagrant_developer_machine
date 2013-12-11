@@ -1,3 +1,3 @@
 #!/bin/bash
 
-apt-get install -y openjdk-7-{jre,jdk}
+apt-get install -y -q openjdk-7-{jre,jdk}

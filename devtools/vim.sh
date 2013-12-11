@@ -1,3 +1,3 @@
 #!/bin/bash
 
-apt-get install -y vim-nox && exit 0
+apt-get install -y -q vim-nox

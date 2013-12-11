@@ -1,3 +1,3 @@
 #!/bin/bash
 
-apt-get install -y openssl
+apt-get install -y -q openssl

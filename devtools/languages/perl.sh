@@ -1,3 +1,3 @@
 #!/bin/bash
 
-apt-get install -y perl
+apt-get install -y -q perl

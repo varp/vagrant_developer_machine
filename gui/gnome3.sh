@@ -1,3 +1,3 @@
 #!/bin/bash
 
-apt-get install -y gnome gnome-tweak-tool
+apt-get install -y -q gnome gnome-tweak-tool

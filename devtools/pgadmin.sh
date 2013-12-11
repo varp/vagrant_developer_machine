@@ -1,3 +1,3 @@
 #!/bin/bash
 
-apt-get install -y pgadmin3
+apt-get install -y -q pgadmin3

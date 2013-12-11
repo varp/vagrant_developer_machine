@@ -1,3 +1,3 @@
 #!/bin/bash
 
-apt-get install -y mysql-server mysql-client
+apt-get install -y -q mysql-server mysql-client

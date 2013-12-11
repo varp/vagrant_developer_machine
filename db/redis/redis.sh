@@ -1,3 +1,3 @@
 #!/bin/bash
 
-apt-get install -y redis-server
+apt-get install -y -q redis-server

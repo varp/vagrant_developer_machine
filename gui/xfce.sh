@@ -1,3 +1,3 @@
 #!/bin/bash
 
-apt-get install -y xubuntu-desktop
+apt-get install -y -q xubuntu-desktop
