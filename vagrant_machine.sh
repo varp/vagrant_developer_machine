@@ -29,6 +29,7 @@ echo "======================= Building your developer machine ================="
 ./devtools/vim.sh
 ./devtools/languages/nodejs.sh
 ./devtools/languages/perl.sh
+./devtools/languages/php.sh
 ./devtools/languages/python2.sh
 ./devtools/languages/python3.sh
 ./devtools/languages/ruby.sh

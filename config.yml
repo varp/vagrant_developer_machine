@@ -2,18 +2,13 @@
 # components and modules list below will sorted by execution order
 # all other will executed and list as is in vagrant_machine.sh
 priorities:
-  system:
-    - repo_yandex
-    - upgrade
-    - user
-    - hostname
-    - ubuntu_fonts
-  deps:
-    - curl
-    - openssl
-    - wget
-    - apt-add-repository
-  devtools:
-  java:
-  db:
-  configs:
+  modules:
+    repo_yandex: 1
+    upgrade: 2
+    user: 3
+    hostname: 4
+    ubuntu_fonts: 5
+    curl: 6
+    openssl: 7
+    wget: 8
+    apt-add-repository: 9

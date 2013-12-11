@@ -1,5 +1,6 @@
 require 'bundler'
 require 'rake'
+require 'yaml'
 require 'erb'
     
 BUILD_DIR = "."
@@ -7,30 +8,36 @@ ERB_DIR = "./erb"
 VAGRANT_MACHINE_PROVISION = "vagrant_machine.sh"
 VAGRANTFILE = "Vagrantfile"
 
-def interpolate_component(component)
-  module_name = component.split("/")[-1]
+class Helpers
+  def self.interpolate_component(component)
+    module_name = component.split("/")[-1]
 
-  if component.split("/").include? "configs"
-    if module_name == "*"
-      configs_args = []
-      Dir.glob("./configs/**") do |filename|
-        configs_args.push(filename.split("/")[-1]) if File.directory?(filename)
+    if component.split("/").include? "configs"
+      if module_name == "*"
+        configs_args = []
+        Dir.glob("./configs/**") do |filename|
+          configs_args.push(filename.split("/")[-1]) if File.directory?(filename)
+        end
+        return "configs/configs.sh #{configs_args.join(' ')}"
+      else
+        return "configs/configs.sh #{module_name}"
       end
-      return "configs/configs.sh #{configs_args.join(' ')}"
+    end
+
+    if module_name == "*"
+      interpolated_files = []
+      Dir.glob(File.join(component.split("/")[0...-1], "*.sh")) do |filename|
+        interpolated_files.push filename
+      end
+      interpolated_files
     else
-      return "configs/configs.sh #{module_name}"
+      module_name += ".sh"
+      File.join(component.split("/")[0...-1], module_name)
     end
   end
 
-  if module_name == "*"
-    interpolated_files = []
-    Dir.glob(File.join(component.split("/")[0...-1], "*.sh")) do |filename|
-      interpolated_files.push filename
-    end
-    interpolated_files
-  else
-    module_name += ".sh"
-    File.join(component.split("/")[0...-1], module_name)
+  def self.load_config
+    YAML.load(File.open("config.yml") { |f| f.read })
   end
 end
 
@@ -54,14 +61,16 @@ end
 
 
 task :build, [:components] do |t, args|
-  
+
+  config = Helpers.load_config
   COMPONENTS = []
   components = args.components.split /\s+/
   components.each do |com|
-    COMPONENTS.push interpolate_component(com)
+    COMPONENTS.push Helpers.interpolate_component(com)
   end
 
   ## Allways append dependicies
+
 
   provision_template = File.open("#{ERB_DIR}/#{VAGRANT_MACHINE_PROVISION}.erb", "r") do |f|
     f.read
