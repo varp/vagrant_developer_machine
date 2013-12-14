@@ -45,8 +45,21 @@ class Helpers
     @@config = YAML.load_file("config.yml")
   end
 
+  def self.prioritories_modules(component_name, modules)
+    priorities = @@config['priorities']['components'][component_name]
+    sorted = []
+    modules.each do |item|
+      module_name = item.to_s.split("/")[-1].split(".")[0]
+      pr = priorities && priorities.index(module_name)
+      index = modules.index item
+      sorted.insert(pr, item) if pr
+      sorted.push item unless pr
+    end
+    sorted.reject { |item| item.nil? }
+  end
+
   def self.order_by_components_first(components)
-    components_order = @@config['priorities']['components']['order']
+    components_order = @@config['priorities']['order']
     comp_modules = []
     sorted = []
 
@@ -54,6 +67,7 @@ class Helpers
       components.each do |com|
         comp_modules.push com if com.match /.*#{com_order}.*/
       end
+      comp_modules = prioritories_modules(com_order, comp_modules)
       sorted.push comp_modules.dup
       comp_modules.clear
     end
@@ -61,22 +75,8 @@ class Helpers
     sorted.flatten!
   end
 
-
-  def self.prioritories_modules(components)
-
+  def self.prioritorize(components)
     puts sorted_by_components = order_by_components_first(components)
-    return
-
-    priorities = @@config['priorities']['modules']
-    pr_components = []
-    components.each do |item|
-      module_name = item.to_s.split("/")[-1].split(".")[0]
-      pr = priorities[module_name]
-      index = components.index item
-      pr_components.insert(pr, item) if index && pr
-      pr_components.push item unless index && pr
-    end
-    pr_components.reject { |item| item.nil? }
   end
 
 end
@@ -110,7 +110,7 @@ task :build, [:components] do |t, args|
   end
 
   ## Allways append dependicies
-  COMPONENTS = Helpers.prioritories_modules com.flatten!
+  COMPONENTS = Helpers.prioritorize com.flatten!
 
 
   provision_template = File.open("#{ERB_DIR}/#{VAGRANT_MACHINE_PROVISION}.erb", "r") do |f|

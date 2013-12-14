@@ -2,12 +2,12 @@
 # components and modules list below will sorted by execution order
 # all other will executed and list as is in vagrant_machine.sh
 priorities:
+  order:
+    - system
+    - deps
+    - devtools
+    - gui
   components:
-    order:
-      - system
-      - deps
-      - devtools
-      - gui
     system:
       - repo_yandex
       - upgrade
@@ -20,9 +20,6 @@ priorities:
       - wget
       - apt_add_repository
     devtools:
-      languages:
-        python:
-          - pip
-          - venv
-        ruby:
-          - rvm
+      - pip
+      - venv
+      - rvm
