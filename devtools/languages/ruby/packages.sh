@@ -2,6 +2,7 @@
 
 install_bundler_gem()
 {
+  rvm use 2.0.0
   gem install bundler
 }
 
