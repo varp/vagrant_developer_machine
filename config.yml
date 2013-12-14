@@ -6,6 +6,8 @@ priorities:
     order:
       - system
       - deps
+      - devtools
+      - gui
     system:
       - repo_yandex
       - upgrade

@@ -3,6 +3,8 @@ require 'rake'
 require 'yaml'
 require 'erb'
 
+# require 'ruby-debug/debugger'
+
 BUILD_DIR = "."
 ERB_DIR = "./erb"
 VAGRANT_MACHINE_PROVISION = "vagrant_machine.sh"
@@ -45,19 +47,18 @@ class Helpers
 
   def self.order_by_components_first(components)
     components_order = @@config['priorities']['components']['order']
-    regex = components_order.map { |com| com.gsub /\w+/, '(\1)' }
-    regex = %r{"#{regex.join "|"}"}
+    comp_modules = []
     sorted = []
 
-    components.each do |com|
-      if regex =~ com
-        comp_index = components_order.index[$1]
-        sorted.inset comp_index, com
-      else
-        sorted.push com
+    components_order.each do |com_order|
+      components.each do |com|
+        comp_modules.push com if com.match /.*#{com_order}.*/
       end
+      sorted.push comp_modules.dup
+      comp_modules.clear
     end
-    sorted
+
+    sorted.flatten!
   end
 
 
