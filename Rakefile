@@ -2,13 +2,16 @@ require 'bundler'
 require 'rake'
 require 'yaml'
 require 'erb'
-    
+
 BUILD_DIR = "."
 ERB_DIR = "./erb"
 VAGRANT_MACHINE_PROVISION = "vagrant_machine.sh"
 VAGRANTFILE = "Vagrantfile"
 
 class Helpers
+
+  @@config = nil
+
   def self.interpolate_component(component)
     module_name = component.split("/")[-1]
 
@@ -37,8 +40,22 @@ class Helpers
   end
 
   def self.load_config
-    YAML.load(File.open("config.yml") { |f| f.read })
+    @@config = YAML.load_file("config.yml")
   end
+
+  def self.prioritories_modules(components)
+    priorities = @@config['priorities']['modules']
+    pr_components = []
+    components.each do |item|
+      module_name = item.to_s.split("/")[-1].split(".")[0]
+      pr = priorities[module_name]
+      index = components.index item
+      pr_components.insert(pr, item) if index && pr
+      pr_components.push item unless index && pr
+    end
+    pr_components.reject { |item| item.nil? }
+  end
+
 end
 
 task :clean do
@@ -62,7 +79,7 @@ end
 
 task :build, [:components] do |t, args|
 
-  config = Helpers.load_config
+  Helpers.load_config
   COMPONENTS = []
   components = args.components.split /\s+/
   components.each do |com|
@@ -70,6 +87,8 @@ task :build, [:components] do |t, args|
   end
 
   ## Allways append dependicies
+  COMPONENTS.flatten!
+  puts Helpers.prioritories_modules COMPONENTS
 
 
   provision_template = File.open("#{ERB_DIR}/#{VAGRANT_MACHINE_PROVISION}.erb", "r") do |f|
