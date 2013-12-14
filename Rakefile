@@ -76,7 +76,7 @@ class Helpers
   end
 
   def self.prioritorize(components)
-    puts sorted_by_components = order_by_components_first(components)
+    sorted_by_components = order_by_components_first(components)
   end
 
 end
