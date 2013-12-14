@@ -47,7 +47,7 @@ class Helpers
 
   def self.prioritories_modules(component_name, modules)
     priorities = @@config['priorities']['components'][component_name]
-    sorted = []
+    sorted = [], unsorted = []
     modules.each do |item|
       module_name = item.to_s.split("/")[-1].split(".")[0]
       pr = priorities && priorities.index(module_name)

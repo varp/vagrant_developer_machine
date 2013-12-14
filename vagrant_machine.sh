@@ -23,9 +23,9 @@ echo "======================= Building your developer machine ================="
 ./deps/apt_add_repository.sh
 ./deps/openssl.sh
 ./devtools/languages/python/pip.sh
-./devtools/git.sh
 ./devtools/languages/ruby/rvm.sh
 ./devtools/languages/python/venv.sh
+./devtools/git.sh
 ./devtools/vim.sh
 ./devtools/languages/perl.sh
 ./devtools/languages/ruby.sh
