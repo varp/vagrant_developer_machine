@@ -43,7 +43,29 @@ class Helpers
     @@config = YAML.load_file("config.yml")
   end
 
+  def self.order_by_components_first(components)
+    components_order = @@config['priorities']['components']['order']
+    regex = components_order.map { |com| com.gsub /\w+/, '(\1)' }
+    regex = %r{"#{regex.join "|"}"}
+    sorted = []
+
+    components.each do |com|
+      if regex =~ com
+        comp_index = components_order.index[$1]
+        sorted.inset comp_index, com
+      else
+        sorted.push com
+      end
+    end
+    sorted
+  end
+
+
   def self.prioritories_modules(components)
+
+    puts sorted_by_components = order_by_components_first(components)
+    return
+
     priorities = @@config['priorities']['modules']
     pr_components = []
     components.each do |item|
