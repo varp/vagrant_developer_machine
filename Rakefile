@@ -80,15 +80,14 @@ end
 task :build, [:components] do |t, args|
 
   Helpers.load_config
-  COMPONENTS = []
+  com = []
   components = args.components.split /\s+/
-  components.each do |com|
-    COMPONENTS.push Helpers.interpolate_component(com)
+  components.each do |c|
+    com.push Helpers.interpolate_component(c)
   end
 
   ## Allways append dependicies
-  COMPONENTS.flatten!
-  puts Helpers.prioritories_modules COMPONENTS
+  COMPONENTS = Helpers.prioritories_modules com.flatten!
 
 
   provision_template = File.open("#{ERB_DIR}/#{VAGRANT_MACHINE_PROVISION}.erb", "r") do |f|

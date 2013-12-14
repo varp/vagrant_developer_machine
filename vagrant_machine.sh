@@ -13,15 +13,15 @@ echo "PROC  => `ls -la /proc/self/fd/0`"
 [ ! -f /dev/tty ] && echo "tty device found!"
 echo "1...2...3..."
 echo "======================= Building your developer machine ================="
-./deps/openssl.sh
-./deps/apt-add-repository.sh
-./deps/curl.sh
-./deps/wget.sh
-./system/user.sh
 ./system/repo_yandex.sh
 ./system/upgrade.sh
-./system/ubuntu_fonts.sh
 ./system/hostname.sh
+./system/ubuntu_fonts.sh
+./system/user.sh
+./deps/curl.sh
+./deps/wget.sh
+./deps/openssl.sh
+./deps/apt-add-repository.sh
 ./java/openjdk.sh
 ./gui/xfce.sh
 ./devtools/git.sh
