@@ -1,6 +1,6 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
-
+require 'rbconfig'
 # Vagrantfile API/syntax version. Don't touch unless you know what you're doing!
 VAGRANTFILE_API_VERSION = "2"
 ENV['DEVELOPER_MACHINE_ROOT'] = Dir.getwd
@@ -21,7 +21,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     vb.gui = true
     vb.customize ["modifyvm", :id, "--name", "developer-pc"]
     vb.customize ["modifyvm", :id, "--ioapic", "on"]
-    if ENV['OS'].match /.*NT.*/ then
+    if RbConfig::CONFIG['host_os'].match /mswin|msys|mingw|cygwin|bccwin|wince|emc/ then
       vb.customize ["modifyvm", :id, "--audio", "dsound"]
     else
       vb.customize ["modifyvm", :id, "--audio", "pulse"]
