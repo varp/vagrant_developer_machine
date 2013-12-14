@@ -66,13 +66,7 @@ echo "======================= Building your developer machine ================="
 
 <% else %>
   <% COMPONENTS.each do |comp| %>
-    <% if comp.instance_of? Array %>
-      <% comp.each do |path| %>
-        <%= "./#{path}" %>
-      <% end %>
-    <% else %>
-      <%= "./#{comp}" %>
-    <% end %>
+    <%= "./#{comp}" %>
   <% end %>
 <% end %>
 
@@ -81,5 +75,6 @@ cd $OLDPWD
 
 ## reboot
 # reboot
+logout
 
 exit 0

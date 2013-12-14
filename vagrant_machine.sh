@@ -18,27 +18,26 @@ echo "======================= Building your developer machine ================="
 ./system/hostname.sh
 ./system/ubuntu_fonts.sh
 ./system/user.sh
+./devtools/languages/python/pip.sh
+./devtools/languages/ruby/rvm.sh
+./devtools/languages/python/venv.sh
 ./deps/curl.sh
 ./deps/wget.sh
+./deps/apt_add_repository.sh
 ./deps/openssl.sh
-./deps/apt-add-repository.sh
-./gui/xfce.sh
 ./devtools/git.sh
-./devtools/sublime3.sh
 ./devtools/vim.sh
 ./devtools/languages/perl.sh
 ./devtools/languages/ruby.sh
 ./devtools/languages/python3.sh
 ./devtools/languages/nodejs.sh
 ./devtools/languages/python2.sh
+./devtools/languages/perl/packages.sh
 ./devtools/languages/python/packages.sh
-./devtools/languages/python/venv.sh
-./devtools/languages/python/pip.sh
 ./devtools/languages/ruby/packages.sh
-./devtools/languages/ruby/rvm.sh
-./configs/configs.sh locales apt sysctl nginx postgresql apache
 # restore old CWD
 cd $OLDPWD
 ## reboot
 # reboot
+logout
 exit 0

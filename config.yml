@@ -2,6 +2,7 @@
 # components and modules list below will sorted by execution order
 # all other will executed and list as is in vagrant_machine.sh
 priorities:
+  components:
   modules:
     repo_yandex: 1
     upgrade: 2
@@ -11,4 +12,7 @@ priorities:
     curl: 6
     openssl: 7
     wget: 8
-    apt-add-repository: 9
+    apt_add_repository: 9
+    pip: 10
+    venv: 11
+    rvm: 12
