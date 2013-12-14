@@ -2,7 +2,7 @@
 
 install_rvm()
 {
-  sudo -i developer
+  sudo -i -u developer
   \curl -sSL https://get.rvm.io | bash -s stable
   source $HOME/.rvm/scripts/rvm
 }
