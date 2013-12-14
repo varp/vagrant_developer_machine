@@ -22,7 +22,6 @@ echo "======================= Building your developer machine ================="
 ./deps/wget.sh
 ./deps/openssl.sh
 ./deps/apt-add-repository.sh
-./java/openjdk.sh
 ./gui/xfce.sh
 ./devtools/git.sh
 ./devtools/sublime3.sh
