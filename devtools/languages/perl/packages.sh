@@ -8,13 +8,13 @@ install_cpan_config()
 
 install_deps_lib()
 {
-  apt-get install -y libyaml-0-2 libgd2-xpm-dev build-essential
+  apt-get install -y libyaml-0-2 libgd2-xpm-dev build-essential postgresql-server-dev-all
 }
 
 install_packages()
 {
   for pack in $(cat ./devtools/languages/perl/cpan.packages.txt); do
-    cpan -j ./devtools/languages/perl/cpan.config.pm $pack;
+    cpan -j ./devtools/languages/perl/cpan.config.pm --no-interactive $pack;
   done	
 }
 
