@@ -10,4 +10,11 @@ change_repo_mirror_to_yandex()
     mv -v $tmp_repo $repo_path/$repo_conf
 }
 
+update_apt_cache()
+{
+  apt-get update
+}
+
+
 change_repo_mirror_to_yandex
+update_apt_cache

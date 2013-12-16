@@ -175,7 +175,7 @@ end
 
 task :default do
   # DEFAULT_COMPONENTS = 'deps/* system/* gui/xfce gui/ubuntu_fonts devtools/git devtools/sublime3 devtools/vim devtools/languages/* devtools/languages/python/* devtools/languages/ruby/* configs/locales'
-  DEFAULT_COMPONENTS = 'deps/* system/* devtools/git devtools/vim configs/locales'
+  DEFAULT_COMPONENTS = 'deps/hostname deps/repo_yandex deps/user system/* devtools/git devtools/vim configs/locales'
   Rake::Task[:clean].invoke
   Rake::Task[:install].invoke
   Rake::Task[:gen].invoke(DEFAULT_COMPONENTS)
