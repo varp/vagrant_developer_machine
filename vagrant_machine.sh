@@ -13,12 +13,12 @@ echo "PROC  => `ls -la /proc/self/fd/0`"
 echo "1...2...3..."
 echo "======================= Building your developer machine ================="
 ./system/repo_yandex.sh
-./system/upgrade.sh
 ./system/user.sh
 ./system/hostname.sh
 ./deps/apt_add_repository.sh
 ./deps/packages.sh
 ./devtools/git.sh
+./devtools/vim.sh
 ./configs/configs.sh locales
 # restore old CWD
 cd $OLDPWD

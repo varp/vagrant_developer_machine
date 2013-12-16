@@ -122,7 +122,7 @@ task :gen, [:components] do |t, args|
     f.read
   end
 
-  vagratfile_template = File.open("#{ERB_DIR}/#{VAGRANTFILE}.erb", "r") do |f|
+  vagrantfile_template = File.open("#{ERB_DIR}/#{VAGRANTFILE}.erb", "r") do |f|
     f.read
   end 
 
@@ -144,7 +144,7 @@ task :gen, [:components] do |t, args|
   end
 
   File.open(vf_out, "w") do |f|
-    f.write ERB.new(vagratfile_template, 0, '', "vagrantfile_out").result b
+    f.write ERB.new(vagrantfile_template, 0, '', "vagrantfile_out").result b
   end
 
   File.open(vm_conf, "w") do |f|
@@ -159,11 +159,10 @@ end
 
 
 task :build do
-  system 'vagrant reload --provision'
+  system "vagrant up --provision"
 end
 
 task :run do
-  # system "vagrant up"
   system "vagrant reload --no-provision"
 end
 
@@ -174,8 +173,7 @@ end
 
 
 task :default do
-  # DEFAULT_COMPONENTS = 'deps/* system/* gui/xfce gui/ubuntu_fonts devtools/git devtools/sublime3 devtools/vim devtools/languages/* devtools/languages/python/* devtools/languages/ruby/* configs/locales'
-  DEFAULT_COMPONENTS = 'deps/hostname deps/repo_yandex deps/user system/* devtools/git devtools/vim configs/locales'
+  DEFAULT_COMPONENTS = 'system/hostname system/repo_yandex system/user deps/* devtools/git devtools/vim configs/locales'
   Rake::Task[:clean].invoke
   Rake::Task[:install].invoke
   Rake::Task[:gen].invoke(DEFAULT_COMPONENTS)
