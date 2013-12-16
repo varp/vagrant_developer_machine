@@ -22,6 +22,7 @@ echo "======================= Building your developer machine ================="
 ./deps/openssl.sh
 ./deps/wget.sh
 ./deps/apt_add_repository.sh
+./deps/zippers.sh
 ./devtools/languages/nodejs.sh
 ./devtools/languages/perl.sh
 ./devtools/languages/php.sh
