@@ -33,7 +33,6 @@ TODO
 * ~~update ruby to 2.0.0; set as default~~
 * ~~change permissions and ownership of developer home folder~~
 * ~~$HOME/.gvfs permissions~~
-
-* finish.sh script to reconfigure all needed packages
+* ~~finish.sh script to reconfigure all needed packages~~
 * NetworkManager config set managed flag
 * to find out which packages install with root rights. fix.
