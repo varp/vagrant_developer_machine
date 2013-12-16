@@ -23,8 +23,6 @@ echo "======================= Building your developer machine ================="
 ./deps/zippers.sh
 ./deps/apt_add_repository.sh
 ./devtools/languages/ruby/rvm.sh
-./devtools/languages/perl.sh
-./devtools/languages/perl/packages.sh
 ./devtools/languages/ruby.sh
 ./devtools/languages/ruby/packages.sh
 # restore old CWD
