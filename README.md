@@ -24,7 +24,7 @@ To install run in shell `git clone https://github.com/varp/vagrant_provision.git
 
 Building
 --------
-To build with default set of components and modules: change directory to *vagrant_provision* and run `rake`. Default set of components include `system/hostname system/repo_yandex system/user deps/* devtools/git devtools/vim configs/locales`.
+To build with default set of components and modules: `cd vagrant_provision && rake`. Default set of components include `system/hostname system/repo_yandex system/user deps/* devtools/git devtools/vim configs/locales`.
 
 To build machine with custom set of components and modules:
 ```
