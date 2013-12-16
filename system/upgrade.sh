@@ -2,8 +2,7 @@
 
 upgrade_system()
 {
-  echo -n "INFO: upgrading system..."
- apt-get update # && apt-get dist-upgrade -y -q
+ apt-get update && apt-get dist-upgrade -y -q
 }
 
 upgrade_vbox_guest_additions()

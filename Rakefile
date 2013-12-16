@@ -163,7 +163,7 @@ task :run do
 
   system "vagrant up"
   # system "vagrant reload"
-  system "ssh -2 -i #{priv_key} vagrant@localhost -p 2222 'sudo passwd developer'"
+  system "ssh -2 -i #{priv_key} vagrant@localhost -p 2222 'sudo /vagrant/#{VAGRANT_MACHINE_CONFIGURE}'"
 end
 
 

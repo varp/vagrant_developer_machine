@@ -3,13 +3,13 @@
 set_developer_user_passwd()
 {
   echo "Set password for user: developer"
-  passwd developer
+  sudo passwd developer
 }
 
 configure_packages()
 {
   echo "Configuring packages:"
-  dpkg --configure -a
+  sudo dpkg --configure -a
 }
 
 echo "===================== Vagrant Machine Post-Configuration ================="

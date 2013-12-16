@@ -20,7 +20,7 @@ Requirements:
   * bundle
   * vagrant >= 1.4.0
 
-To install run in shell `git clone https://github.com/varp/vagrant_provision.git`. Change directory to *vagrant_provision*. Run `rake && vagrant up`.
+To install run in shell `git clone https://github.com/varp/vagrant_provision.git`. Change directory to *vagrant_provision*. Run `rake`.
 
 Building
 --------
