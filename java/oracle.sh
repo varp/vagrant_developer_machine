@@ -2,7 +2,7 @@
 
 add_webupd_ppa()
 {
-  add-apt-repository -y -q ppa:webupd8team/java
+  add-apt-repository -y ppa:webupd8team/java
   apt-get update
 }
 

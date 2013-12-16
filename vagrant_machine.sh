@@ -16,15 +16,9 @@ echo "======================= Building your developer machine ================="
 ./system/upgrade.sh
 ./system/user.sh
 ./system/hostname.sh
-./deps/curl.sh
-./deps/openssl.sh
-./deps/wget.sh
-./deps/zippers.sh
 ./deps/apt_add_repository.sh
-./devtools/languages/ruby/rvm.sh
-./devtools/languages/ruby.sh
-./devtools/languages/ruby/packages.sh
+./deps/packages.sh
+./java/oracle.sh
 # restore old CWD
 cd $OLDPWD
-logout
-exit 0
+exit 0 && exit 0

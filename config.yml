@@ -7,6 +7,10 @@ priorities:
     - deps
     - devtools
     - gui
+    - java
+    - web
+    - db
+    - configs
   components:
     system:
       - repo_yandex
@@ -14,10 +18,6 @@ priorities:
       - user
       - hostname
     deps:
-      - curl
-      - openssl
-      - wget
-      - zippers
       - apt_add_repository
     devtools:
       - pip
