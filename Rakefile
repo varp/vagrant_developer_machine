@@ -8,6 +8,7 @@ require 'erb'
 BUILD_DIR = "."
 ERB_DIR = "./erb"
 VAGRANT_MACHINE_PROVISION = "vagrant_machine.sh"
+VAGRANT_MACHINE_CONFIGURE = "vagrant_machine_configure.sh"
 VAGRANTFILE = "Vagrantfile"
 
 class Helpers
@@ -117,6 +118,10 @@ task :build, [:components] do |t, args|
     f.read
   end
 
+  configure_template = File.open("#{ERB_DIR}/#{VAGRANT_MACHINE_CONFIGURE}.erb", "r") do |f|
+    f.read
+  end
+
   vagratfile_template = File.open("#{ERB_DIR}/#{VAGRANTFILE}.erb", "r") do |f|
     f.read
   end 
@@ -124,6 +129,7 @@ task :build, [:components] do |t, args|
   Dir.mkdir_p(BUILD_DIR) unless Dir.exists? BUILD_DIR
 
   vm_out = File.join(BUILD_DIR, VAGRANT_MACHINE_PROVISION)
+  vm_conf = File.join(BUILD_DIR, VAGRANT_MACHINE_CONFIGURE)
   vf_out = File.join(BUILD_DIR, VAGRANTFILE)
 
   b = binding
@@ -141,14 +147,31 @@ task :build, [:components] do |t, args|
     f.write ERB.new(vagratfile_template, 0, '', "vagrantfile_out").result b
   end
 
+  File.open(vm_conf, "w") do |f|
+    f.write ERB.new(configure_template, 0, '', "machine_configure_out").result b
+  end
+
 
   File.chmod(0755, vm_out)
   File.chmod(0755, vf_out)
+  File.chmod(0755, vm_conf)
 end
 
+
+task :run do
+  priv_key = '/cygdrive/c/HashiCorp/Vagrant/embedded/gems/gems/vagrant-1.3.5/keys/vagrant'
+
+  system "vagrant up"
+  # system "vagrant reload"
+  system "ssh -2 -i #{priv_key} vagrant@localhost -p 2222 'sudo passwd developer'"
+end
+
+
 task :default do
-  DEFAULT_COMPONENTS = 'deps/* system/* gui/xfce gui/ubuntu_fonts devtools/git devtools/sublime3 devtools/vim devtools/languages/* devtools/languages/python/*  devtools/languages/ruby/* configs/locales'
+  # DEFAULT_COMPONENTS = 'deps/* system/* gui/xfce gui/ubuntu_fonts devtools/git devtools/sublime3 devtools/vim devtools/languages/* devtools/languages/python/* devtools/languages/ruby/* configs/locales'
+  DEFAULT_COMPONENTS = 'deps/* system/* devtools/git configs/locales'
   Rake::Task[:clean].invoke
   Rake::Task[:install].invoke
   Rake::Task[:build].invoke(DEFAULT_COMPONENTS)
+  Rake::Task[:run].invoke
 end

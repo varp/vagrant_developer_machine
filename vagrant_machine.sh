@@ -18,7 +18,8 @@ echo "======================= Building your developer machine ================="
 ./system/hostname.sh
 ./deps/apt_add_repository.sh
 ./deps/packages.sh
-./java/oracle.sh
+./devtools/git.sh
+./configs/configs.sh locales
 # restore old CWD
 cd $OLDPWD
 exit 0

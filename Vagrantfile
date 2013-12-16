@@ -4,6 +4,7 @@
 VAGRANTFILE_API_VERSION = "2"
 ENV['DEVELOPER_MACHINE_ROOT'] = Dir.getwd
 ENV['DEVELOPER_MACHINE_PROVISION_BOOTSTRAP'] = 'vagrant_machine.sh'
+ENV['DEVELOPER_MACHINE_CONFIGURE'] = 'vagrant_machine_configure.sh'
 
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
