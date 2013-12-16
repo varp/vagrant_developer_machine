@@ -101,7 +101,7 @@ end
 
 
 
-task :build, [:components] do |t, args|
+task :gen, [:components] do |t, args|
 
   Helpers.load_config
   com = []
@@ -157,9 +157,14 @@ task :build, [:components] do |t, args|
   File.chmod(0755, vm_conf)
 end
 
+
+task :build do
+  system 'vagrant reload --provision'
+end
+
 task :run do
   # system "vagrant up"
-  system "vagrant reload"
+  system "vagrant reload --no-provision"
 end
 
 task :configure do
@@ -170,10 +175,11 @@ end
 
 task :default do
   # DEFAULT_COMPONENTS = 'deps/* system/* gui/xfce gui/ubuntu_fonts devtools/git devtools/sublime3 devtools/vim devtools/languages/* devtools/languages/python/* devtools/languages/ruby/* configs/locales'
-  DEFAULT_COMPONENTS = 'deps/* system/* devtools/git configs/locales'
+  DEFAULT_COMPONENTS = 'deps/* system/* devtools/git devtools/vim configs/locales'
   Rake::Task[:clean].invoke
   Rake::Task[:install].invoke
-  Rake::Task[:build].invoke(DEFAULT_COMPONENTS)
+  Rake::Task[:gen].invoke(DEFAULT_COMPONENTS)
+  Rake::Task[:build].invoke
   Rake::Task[:run].invoke
   Rake::Task[:configure].invoke
 end
