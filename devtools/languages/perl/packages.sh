@@ -1,6 +1,4 @@
 #!/bin/bash
-
-
 install_cpanminus()
 {
   apt-get install -y -q cpanminus

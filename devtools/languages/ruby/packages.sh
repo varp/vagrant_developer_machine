@@ -2,7 +2,6 @@
 
 install_bundler_gem()
 {
-  # sudo -i -u developer
   rvm use 2.0.0
   gem install bundler
 }
