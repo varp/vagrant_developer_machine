@@ -6,6 +6,7 @@ update_hostname()
 	machine_name="developer-pc-$machine_num"
 
 	echo $machine_name > /etc/hostname
+  echo "127.0.1.1 $machine_name" >> /etc/hosts
 }
 
 update_hostname

@@ -7,7 +7,8 @@ developer_user()
 
 install_cpan_config()
 {
-  cp -vf ./devtools/languages/perl/cpan.config.pm $HOME/.cpan/CPAN/MyConfig.pm
+  cpan -f ./devtools/languages/perl/cpan.config.pm
+  # cp -vf ./devtools/languages/perl/cpan.config.pm $HOME/.cpan/CPAN/MyConfig.pm
 }
 
 install_deps_lib()
