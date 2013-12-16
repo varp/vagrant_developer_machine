@@ -2,11 +2,13 @@
 
 set_developer_user_passwd()
 {
+  echo "Set password for user: developer"
   passwd developer
 }
 
 configure_packages()
 {
+  echo "Configuring packages:"
   dpkg --configure -a
 }
 
