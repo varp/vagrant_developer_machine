@@ -1,5 +1,5 @@
 #!/bin/bash
-SCRIPTS_ROOT="/home/vagrant/logout"
+SCRIPTS_ROOT="/vagrant"
 cd $SCRIPTS_ROOT
 export DEBIAN_FRONTEND=noninteractive
 echo "========================== Vagrant Dev Machine =========================="
