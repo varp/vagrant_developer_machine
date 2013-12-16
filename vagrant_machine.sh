@@ -21,4 +21,4 @@ echo "======================= Building your developer machine ================="
 ./java/oracle.sh
 # restore old CWD
 cd $OLDPWD
-exit 0 && exit 0
+exit 0
