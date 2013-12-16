@@ -29,7 +29,7 @@ TODO
 TODO
 ----
 * ~~assign some kind of priorities to modules (execution order)~~
-* ~~~/.config/sublime-text-3 change ownership to user not root~~
+* ~~ $HOME/.config/sublime-text-3 change ownership to user not root~~
 * ~~update ruby to 2.0.0; set as default~~
 * ~~change permissions and ownership of developer home folder~~
 * ~~~/.gvfs permissions~~
