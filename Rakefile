@@ -91,7 +91,7 @@ task :clean do
   system script
 end
 
-task :install do
+task :init do
   script = <<-EOF
     vagrant init precise32 http://files.vagrantup.com/precise32.box
   EOF
@@ -162,7 +162,7 @@ task :build do
   system "vagrant up --provision"
 end
 
-task :run do
+task :reload do
   system "vagrant reload --no-provision"
 end
 
@@ -175,9 +175,9 @@ end
 task :default do
   DEFAULT_COMPONENTS = 'system/hostname system/repo_yandex system/user deps/* devtools/git devtools/vim configs/locales'
   Rake::Task[:clean].invoke
-  Rake::Task[:install].invoke
+  Rake::Task[:init].invoke
   Rake::Task[:gen].invoke(DEFAULT_COMPONENTS)
   Rake::Task[:build].invoke
-  Rake::Task[:run].invoke
+  Rake::Task[:reload].invoke
   Rake::Task[:configure].invoke
 end
