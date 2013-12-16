@@ -5,6 +5,11 @@ developer_user()
   sudo -i -u developer
 }
 
+install_cpan_config()
+{
+  cp -vf ./devtools/languages/perl/cpan.config.pm $HOME/.cpan/CPAN/MyConfig.pm
+}
+
 install_deps_lib()
 {
   apt-get install -y libyaml-0-2 libgd2-xpm-dev build-essential
@@ -23,7 +28,7 @@ log_out()
 }
 
 
-developer_user
+# developer_user
 install_deps_lib
 install_packages
-log_out
+# log_out
