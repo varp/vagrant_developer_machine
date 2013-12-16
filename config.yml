@@ -18,6 +18,7 @@ priorities:
       - curl
       - openssl
       - wget
+      - zippers
       - apt_add_repository
     devtools:
       - pip
