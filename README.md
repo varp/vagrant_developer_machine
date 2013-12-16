@@ -20,11 +20,24 @@ Requirements:
   * bundle
   * vagrant >= 1.4.0
 
-To install run in shell `git clone https://github.com/varp/vagrant_provision.git`. Change directory to *vagrant_provision*. Run `rake`.
+To install run in shell `git clone https://github.com/varp/vagrant_provision.git`.
 
 Building
 --------
-TODO
+Build with default set of components: change directory to *vagrant_provision* and run `rake`. Default set of components include `system/hostname system/repo_yandex system/user deps/* devtools/git devtools/vim configs/locales`.
+
+To build machine with custom set of components of modules:
+```
+cd vagrant_provision
+rake clean
+rake install
+rake build['system/* deps/* gui/xfce gui/ubuntu_fonts devtools/* configs/locales'] 
+# components list must be seprated by spaces
+# to include all modules within a component use asterisk, ex. `system/*`
+# to include separate modules within component, ex. `devtools/git devtools/vim`
+rake run
+rake configure
+```
 
 TODO
 ----
