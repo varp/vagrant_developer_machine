@@ -2,7 +2,7 @@
 
 install_rvm()
 {
-  \curl -sSL https://get.rvm.io --ruby=2.0.0-p353| bash -s stable
+  \curl -sSL https://get.rvm.io | bash -s stable --ruby=2.0.0-p353
   source $HOME/.rvm/scritps/rvm.sh
 }
 

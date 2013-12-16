@@ -2,7 +2,6 @@
 SCRIPTS_ROOT="/home/vagrant/logout"
 cd $SCRIPTS_ROOT
 export DEBIAN_FRONTEND=noninteractive
-export TERM=linux
 echo "========================== Vagrant Dev Machine =========================="
 echo "PWD   => $PWD"
 echo "TERM  => $TERM"
@@ -23,8 +22,11 @@ echo "======================= Building your developer machine ================="
 ./deps/wget.sh
 ./deps/zippers.sh
 ./deps/apt_add_repository.sh
+./devtools/languages/ruby/rvm.sh
 ./devtools/languages/perl.sh
 ./devtools/languages/perl/packages.sh
+./devtools/languages/ruby.sh
+./devtools/languages/ruby/packages.sh
 # restore old CWD
 cd $OLDPWD
 exit 0
