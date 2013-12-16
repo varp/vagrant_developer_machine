@@ -13,7 +13,6 @@ priorities:
       - upgrade
       - user
       - hostname
-      - ubuntu_fonts
     deps:
       - curl
       - openssl

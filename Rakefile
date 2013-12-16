@@ -147,7 +147,7 @@ task :build, [:components] do |t, args|
 end
 
 task :default do
-  DEFAULT_COMPONENTS = 'deps/* system/* gui/xfce devtools/git devtools/sublime3 devtools/vim devtools/languages/* devtools/languages/python/*  devtools/languages/ruby/* configs/*'
+  DEFAULT_COMPONENTS = 'deps/* system/* gui/xfce gui/ubuntu_fonts devtools/git devtools/sublime3 devtools/vim devtools/languages/* devtools/languages/python/*  devtools/languages/ruby/* configs/*'
   Rake::Task[:clean].invoke
   Rake::Task[:install].invoke
   Rake::Task[:build].invoke(DEFAULT_COMPONENTS)
