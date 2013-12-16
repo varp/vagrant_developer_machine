@@ -15,7 +15,6 @@ echo "======================= Building your developer machine ================="
 ./system/repo_yandex.sh
 ./system/upgrade.sh
 ./system/user.sh
-./system/ubuntu_fonts.sh
 ./system/hostname.sh
 ./deps/curl.sh
 ./deps/openssl.sh
@@ -27,4 +26,5 @@ echo "======================= Building your developer machine ================="
 ./devtools/languages/ruby/packages.sh
 # restore old CWD
 cd $OLDPWD
+logout
 exit 0
