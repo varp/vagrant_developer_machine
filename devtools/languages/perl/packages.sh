@@ -19,8 +19,6 @@ install_packages()
 }
 
 
-# developer_user
 install_deps_lib
 install_cpan_config
 install_packages
-# log_out
