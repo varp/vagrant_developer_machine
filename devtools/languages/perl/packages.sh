@@ -1,9 +1,9 @@
 #!/bin/bash
 
-install_cpan_config()
+
+install_cpanminus()
 {
-  cpan -j ./devtools/languages/perl/cpan.config.pm
-  # cp -vf ./devtools/languages/perl/cpan.config.pm $HOME/.cpan/CPAN/MyConfig.pm
+  apt-get install -y -q cpanminus
 }
 
 install_deps_lib()
@@ -14,7 +14,7 @@ install_deps_lib()
 install_packages()
 {
   for pack in $(cat ./devtools/languages/perl/cpan.packages.txt); do
-    cpan -j ./devtools/languages/perl/cpan.config.pm --no-interactive $pack;
+    cpanm --installdeps --no-interactive $pack;
   done	
 }
 
