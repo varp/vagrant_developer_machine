@@ -20,5 +20,5 @@ install_packages()
 
 
 install_deps_lib
-install_cpan_config
+install_cpanminus
 install_packages
