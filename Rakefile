@@ -157,12 +157,13 @@ task :build, [:components] do |t, args|
   File.chmod(0755, vm_conf)
 end
 
-
 task :run do
-  priv_key = '/cygdrive/c/HashiCorp/Vagrant/embedded/gems/gems/vagrant-1.3.5/keys/vagrant'
+  # system "vagrant up"
+  system "vagrant reload"
+end
 
-  system "vagrant up"
-  # system "vagrant reload"
+task :configure do
+  priv_key = '/cygdrive/c/HashiCorp/Vagrant/embedded/gems/gems/vagrant-1.3.5/keys/vagrant'
   system "ssh -2 -i #{priv_key} vagrant@localhost -p 2222 'sudo /vagrant/#{VAGRANT_MACHINE_CONFIGURE}'"
 end
 
@@ -174,4 +175,5 @@ task :default do
   Rake::Task[:install].invoke
   Rake::Task[:build].invoke(DEFAULT_COMPONENTS)
   Rake::Task[:run].invoke
+  Rake::Task[:configure].invoke
 end
