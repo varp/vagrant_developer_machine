@@ -22,15 +22,7 @@ echo "======================= Building your developer machine ================="
 ./deps/openssl.sh
 ./deps/wget.sh
 ./deps/apt_add_repository.sh
-./devtools/languages/python/pip.sh
-./devtools/languages/python/venv.sh
-./devtools/languages/nodejs.sh
-./devtools/languages/perl.sh
-./devtools/languages/php.sh
-./devtools/languages/python2.sh
-./devtools/languages/python3.sh
-./devtools/languages/ruby.sh
-./devtools/languages/python/packages.sh
+./devtools/languages/perl/packages.sh
 # restore old CWD
 cd $OLDPWD
 ## reboot

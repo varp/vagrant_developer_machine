@@ -31,4 +31,5 @@ log_out()
 # developer_user
 install_deps_lib
 install_packages
+install_cpan_config
 # log_out
