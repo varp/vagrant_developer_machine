@@ -1,13 +1,8 @@
 #!/bin/bash
 
-developer_user()
-{
-  sudo -i -u developer
-}
-
 install_cpan_config()
 {
-  cpan -f ./devtools/languages/perl/cpan.config.pm
+  cpan -j ./devtools/languages/perl/cpan.config.pm
   # cp -vf ./devtools/languages/perl/cpan.config.pm $HOME/.cpan/CPAN/MyConfig.pm
 }
 
@@ -18,19 +13,14 @@ install_deps_lib()
 
 install_packages()
 {
-  for pack in $(cat ./devtools/language/perl/cpan.packages.txt); do
-    cpan $pack;
+  for pack in $(cat ./devtools/languages/perl/cpan.packages.txt); do
+    cpan -j ./devtools/languages/perl/cpan.config.pm $pack;
   done	
-}
-
-log_out()
-{
-  logout
 }
 
 
 # developer_user
 install_deps_lib
-install_packages
 install_cpan_config
+install_packages
 # log_out
