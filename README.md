@@ -32,7 +32,7 @@ cd vagrant_provision
 rake clean
 rake install
 rake gen['system/* deps/* gui/xfce gui/ubuntu_fonts devtools/* configs/locales'] 
-# components list must be seprated by spaces
+# components list must be separated by spaces
 # to include all modules within a component use asterisk, ex. `system/*`
 # to include separate modules within component, ex. `devtools/git devtools/vim`
 rake build
