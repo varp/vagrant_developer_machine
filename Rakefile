@@ -21,13 +21,15 @@ task :clean do
 end
 
 task :init, [:boxname] do |t, args|
-  vagrant_box = args.boxname || "precise32"
+  Helpers.load_config
+  vagrant_box = Helpers.vagrant_box
   system "vagrant init #{vagrant_box} http://files.vagrantup.com/#{vagrant_box}.box"
 end
 
 task :gen, [:components] do |t, args|
-
   Helpers.load_config
+  VAGRANT_BOX = Helpers.vagrant_box
+
   com = []
   components = args.components.split /\s+/
   components.each do |c|

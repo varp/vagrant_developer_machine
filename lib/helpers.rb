@@ -5,6 +5,14 @@ class Helpers
 
   @@config = nil
 
+  def self.load_config(filename="config.yml")
+    @@config = YAML.load_file(filename)
+  end
+
+  def self.vagrant_box
+    @@config['vagrant']['box']
+  end
+
   def self.interpolate_component(component)
     module_name = component.split("/")[-1]
 
@@ -30,10 +38,6 @@ class Helpers
       module_name += ".sh"
       File.join(component.split("/")[0...-1], module_name)
     end
-  end
-
-  def self.load_config(filename="config.yml")
-    @@config = YAML.load_file(filename)
   end
 
   def self.prioritories_modules(component_name, modules)
