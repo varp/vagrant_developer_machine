@@ -20,15 +20,10 @@ task :clean do
   system script
 end
 
-task :init do
-  script = <<-EOF
-    vagrant init precise32 http://files.vagrantup.com/precise32.box
-  EOF
-
-  system script
+task :init, [:boxname] do |t, args|
+  vagrant_box = args.boxname || "precise32"
+  system "vagrant init #{vagrant_box} http://files.vagrantup.com/#{vagrant_box}.box"
 end
-
-
 
 task :gen, [:components] do |t, args|
 
