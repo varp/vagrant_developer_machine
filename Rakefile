@@ -2,7 +2,7 @@ require 'rubygems'
 require 'rake'
 require 'erb'
 
-require 'lib/helpers'
+require './lib/helpers'
 
 
 BUILD_DIR = "."
