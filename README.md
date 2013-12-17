@@ -48,5 +48,6 @@ TODO
 * ~~change permissions and ownership of developer home folder~~
 * ~~$HOME/.gvfs permissions~~
 * ~~finish.sh script to reconfigure all needed packages~~
+* perl packages install; cpan configure
 * NetworkManager config set managed flag
 * to find out which packages install with root rights. fix.
