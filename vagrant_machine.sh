@@ -19,8 +19,23 @@ echo "======================= Building your developer machine ================="
 ./system/samba.sh
 ./deps/apt_add_repository.sh
 ./deps/packages.sh
-./devtools/languages/perl/packages.sh
+./devtools/languages/python/pip.sh
+./devtools/languages/python/venv.sh
+./devtools/git.sh
+./devtools/vim.sh
+./devtools/sublime3.sh
+./devtools/languages/nodejs.sh
 ./devtools/languages/perl.sh
+./devtools/languages/php.sh
+./devtools/languages/python2.sh
+./devtools/languages/python3.sh
+./devtools/languages/ruby.sh
+./devtools/languages/python/packages.sh
+./devtools/languages/perl/packages.sh
+./gui/unity.sh
+./web/nginx.sh
+./db/postgresql/postgresql.sh
+./db/redis/redis.sh
 # restore old CWD
 cd $OLDPWD
 exit 0
