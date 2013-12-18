@@ -1,7 +1,7 @@
 #!/bin/bash
 install_cpanminus()
 {
-  apt-get install -y -q cpanminus
+  apt-get install -y -q cpanminus libdancer-perl
 }
 
 install_deps_lib()
