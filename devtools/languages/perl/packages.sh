@@ -12,7 +12,7 @@ install_deps_lib()
 install_packages()
 {
   for pack in $(cat ./devtools/languages/perl/cpan.packages.txt); do
-    cpanm --installdeps --no-interactive --sudo --local-lib /usr/share/perl5 $pack;
+    cpanm --no-interactive $pack;
   done	
 }
 
