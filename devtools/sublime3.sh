@@ -6,6 +6,7 @@ install_sublime3()
 	apt-get update
 	apt-get install -y -q sublime-text-installer
   id developer && chown -R developer:developer /home/developer/.config/sublime-text-3
+  exit 0
 }
 
 install_sublime3

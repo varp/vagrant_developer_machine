@@ -19,6 +19,8 @@ echo "======================= Building your developer machine ================="
 ./system/samba.sh
 ./deps/apt_add_repository.sh
 ./deps/packages.sh
+./gui/mate.sh
+./gui/ubuntu_fonts.sh
 ./devtools/sublime3.sh
 ./devtools/git.sh
 ./devtools/vim.sh
@@ -27,8 +29,6 @@ echo "======================= Building your developer machine ================="
 ./devtools/languages/ruby.sh
 ./devtools/languages/perl.sh
 ./devtools/languages/php.sh
-./gui/unity.sh
-./gui/ubuntu_fonts.sh
 ./web/nginx.sh
 ./db/redis/redis.sh
 ./db/postgresql/postgresql.sh

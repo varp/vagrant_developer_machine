@@ -7,8 +7,8 @@ priorities:
   order:
     - system
     - deps
-    - devtools
     - gui
+    - devtools
     - java
     - web
     - db
