@@ -51,3 +51,4 @@ TODO
 * perl packages install; cpan configure
 * NetworkManager config set managed flag
 * to find out which packages install with root rights. fix.
+* Change to user developer in scripts, to install ex: sublime3, rvm to proper directories
