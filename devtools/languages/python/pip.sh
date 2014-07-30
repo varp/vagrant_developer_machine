@@ -2,7 +2,7 @@
 
 developer_user()
 {
-  sudo -i -u developer
+  sudo -i -E -u developer
 }
 
 download_ez_setup()
@@ -33,9 +33,9 @@ log_out()
 echo "Warning! It will install latest version of [pip] and [setuptools], 
 not distributed with system!!!"
 
-# developer_user
+developer_user
 download_ez_setup
 install_ez_setup
 download_get_pip
 install_pip
-# log_out
+log_out

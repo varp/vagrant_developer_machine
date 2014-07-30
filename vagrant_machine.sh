@@ -32,7 +32,6 @@ echo "======================= Building your developer machine ================="
 ./devtools/languages/ruby.sh
 ./devtools/languages/python3.sh
 ./devtools/languages/python/packages.sh
-./devtools/languages/ruby/packages.sh
 ./web/nginx.sh
 ./db/postgresql/postgresql.sh
 ./configs/configs.sh locales
