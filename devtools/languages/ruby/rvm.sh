@@ -2,14 +2,14 @@
 
 install_rvm()
 {
-  \curl -sSL https://get.rvm.io | bash -s stable --ruby=2.0.0-p353
+  \curl -sSL https://get.rvm.io | bash -s stable --ruby=2.1.2
   source /usr/local/rvm/scripts/rvm
 }
 
 install_ruby()
 {
-  rvm --default use 2.0.0-p353
-  rvm use 2.0.0
+  rvm --default use 2.1.2
+  rvm use 2.1.2
 }
 
 
