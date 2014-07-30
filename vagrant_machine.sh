@@ -34,7 +34,7 @@ echo "======================= Building your developer machine ================="
 ./devtools/languages/python/packages.sh
 ./devtools/languages/ruby/packages.sh
 ./web/nginx.sh
-./db/postgresql.sh
+./db/postgresql/postgresql.sh
 ./configs/configs.sh locales
 # restore old CWD
 cd $OLDPWD
