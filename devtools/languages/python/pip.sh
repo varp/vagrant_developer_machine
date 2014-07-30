@@ -27,7 +27,7 @@ install_pip()
 
 log_out()
 {
-  logout
+  exit 0
 }
 
 echo "Warning! It will install latest version of [pip] and [setuptools], 

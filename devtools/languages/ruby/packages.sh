@@ -6,7 +6,7 @@ install_bundler_gem()
   source /usr/local/rvm/scripts/rvm
   rvm use 2.1.2
   gem install bundler
-  logout
+  exit 0
 }
 
 install_gems()
@@ -15,7 +15,7 @@ install_gems()
   source /usr/local/rvm/scripts/rvm
   rvm use 2.1.2
   cd devtools/languages/ruby && bundle install && cd $OLDPWD
-  logout
+  exit 0
 }
 
 
